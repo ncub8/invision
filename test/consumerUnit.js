@@ -50,6 +50,9 @@ describe('Consumer connectivity', function(){
                 fakeProducer.write("2+3=");
                 mySpy.should.have.been.called;
                 mySpy.should.have.been.calledWith("producer sent: 2+3= I calculated: 5");
+
+                fakeProducer.write("bad");
+                mySpy.should.have.been.calledWith("producer sent something I didn't understand: bad");
             });
             fakeProducer.on("data", function(data){
                 fakeProducer.disconnect();
