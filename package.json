@@ -4,8 +4,16 @@
   "description": "Full Stack challenge",
   "main": "run.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node run.js",
+    "test": "mocha"
   },
   "author": "John Moore",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "mocha-sinon": "^1.1.4",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+  }
 }

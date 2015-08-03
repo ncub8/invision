@@ -13,8 +13,10 @@ var calculate = function(data){
 
 module.exports = {
 
+    server: {},
+
     start: function(){
-        net.createServer(function(s){
+        server = net.createServer(function(s){
 
             //receive data from producer
             s.on('data', function(data){
@@ -41,7 +43,14 @@ module.exports = {
 
         }).listen(port, host);
 
-        console.log("producer listening on " + host + ":" + port);
+        console.log("consumer listening on " + host + ":" + port);
+
+    },
+
+    stop: function(){
+        if(server.close){
+            server.close();
+        }
     }
 }
 

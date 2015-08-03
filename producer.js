@@ -26,11 +26,11 @@ module.exports = {
             console.log("producer named: " + name + " received " + data);
         });
 
-//clean up
+        //clean up
         producer.on('close', function(){
             console.log("Producer named " + name + " connection closed.");
         });
-        return producer
+
     }
 }
 //generate random math expression
